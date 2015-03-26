@@ -21,15 +21,7 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
-
-
-
-
-
-
-
-
-% =========================================================================
-
+probability = sigmoid(Theta2*[ones(1, m); sigmoid(Theta1*[ones(1, m); X'])]);
+[max_prob, p(:)] = max(probability, [], 1); % convert probability to output
 
 end

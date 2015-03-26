@@ -54,8 +54,8 @@ initial_theta = zeros(n + 1, 1);
 J = zeros(num_labels, 50);
 
 for c = 1:num_labels
-  [all_theta(c,:), J(c,:), exit_flag]  = fmincg(@(t)(lrCostFunction(t, X, (y == c), lambda)), ...
-                    initial_theta, options);
+  [all_theta(c,:), J(c,:), exit_flag] = ...
+  fmincg(@(t)(lrCostFunction(t, X, (y == c), lambda)), initial_theta, options);
 end
 
 end
